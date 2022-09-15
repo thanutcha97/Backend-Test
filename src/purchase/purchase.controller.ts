@@ -19,4 +19,30 @@ export class PurchaseController {
   }
 
 
-}
+  @UseGuards(RolesGuard)
+  @Roles(Role.Admin)
+  @Get()
+  findAll() {
+    return this.purchaseService.findHistoryALL();
+  }
+
+  @UseGuards(RolesGuard)
+  @Roles(Role.Admin)
+  @Get('report/:type')
+  async reportPurchase( @Param('type') type: string ) {
+      const items = await this.purchaseService.reportPurchase(type);
+      return {
+        items,
+        count: items.length,
+        typeBook: type
+      }
+    }
+
+  @UseGuards(RolesGuard)
+  @Roles(Role.Admin)  
+  @Get('reportUser/:id')
+  async reportUser( @Param('id') id: string ) {
+      const items = await this.purchaseService.reportUser(id);
+      return items;
+    }
+  }

@@ -13,9 +13,26 @@ import { PurcheaseBook } from './dto/create-purchease.dto';
 export class BookController {
   constructor(private readonly bookService: BookService) {}
 
+
+  @UseGuards(RolesGuard)
+  @Roles(Role.Admin)
   @Post('addbook')
   create(@Body() book : CreateBookDto ) {
     return this.bookService.create(book);
+  }
+
+  @UseGuards(RolesGuard)
+  @Roles(Role.Admin)
+  @Patch('update/:id')
+  update(@Param('id') id: string, @Body() updateBookDto: UpdateBookDto) {
+    return this.bookService.update(id, updateBookDto);
+  }
+
+  @UseGuards(RolesGuard)
+  @Roles(Role.Admin)
+  @Delete('delete/:id')
+  remove(@Param('id') id: string) {
+    return this.bookService.remove(id);
   }
 
   @Get()
@@ -26,16 +43,6 @@ export class BookController {
   @Get('search/:name')
   findbyname(@Param('name') name: string) {
     return this.bookService.findbyname(name);
-  }
-
-  @Patch('update/:id')
-  update(@Param('id') id: string, @Body() updateBookDto: UpdateBookDto) {
-    return this.bookService.update(id, updateBookDto);
-  }
-
-  @Delete('delete/:id')
-  remove(@Param('id') id: string) {
-    return this.bookService.remove(id);
   }
 
   @Get('sortbyprice/:select')

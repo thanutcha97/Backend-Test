@@ -15,8 +15,7 @@ import { PurchaseModule } from './purchase/purchase.module';
     MongooseModule.forRoot('mongodb://127.0.0.1:27017', {
       connectionName: 'bookshop',}),
     UsersModule,
-    AuthModule,
-    
+    AuthModule
   ],
   controllers: [AppController],
   providers: [AppService],

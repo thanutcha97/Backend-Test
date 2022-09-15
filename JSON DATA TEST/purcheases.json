@@ -1,0 +1,52 @@
+[{
+  "_id": {
+    "$oid": "631f6301546779d2f57b5967"
+  },
+  "UserId": "631d852318a16c681dedce45",
+  "bookID": "63184a278468e7e7c3857544",
+  "username": "test4",
+  "bookName": "Harry Potter",
+  "priceBook": 650,
+  "bookType": "Novel",
+  "amount": 7,
+  "buyDate": {
+    "$date": {
+      "$numberLong": "1663001345668"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63234a4a9a8000745ff476cc"
+  },
+  "UserId": "631d852318a16c681dedce45",
+  "bookID": "63184bace64e8a255d0fe942",
+  "username": "test4",
+  "bookName": "Alice in Wonderland",
+  "priceBook": 480,
+  "bookType": "Fancy",
+  "amount": 2,
+  "buyDate": {
+    "$date": {
+      "$numberLong": "1663257162334"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63234b489a8000745ff476d9"
+  },
+  "UserId": "631d852318a16c681dedce45",
+  "bookID": "63184c40e64e8a255d0fe947",
+  "username": "test4",
+  "bookName": "Sherlock Holmes",
+  "priceBook": 360,
+  "bookType": "Novel",
+  "amount": 4,
+  "buyDate": {
+    "$date": {
+      "$numberLong": "1663257416179"
+    }
+  },
+  "__v": 0
+}]

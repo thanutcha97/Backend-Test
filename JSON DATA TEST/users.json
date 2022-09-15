@@ -1,0 +1,70 @@
+[{
+  "_id": {
+    "$oid": "631b434c181b4ccca3cb1fe7"
+  },
+  "username": "test",
+  "password": "$2b$10$h6g9pi1gEDUMcq8dbpF5eOZ0BUK8LN1Ginm/pgns2EXRNIUc3SKUO",
+  "status": "Active",
+  "registerDate": {
+    "$date": {
+      "$numberLong": "1662731084870"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "631b4393181b4ccca3cb1feb"
+  },
+  "username": "test2",
+  "password": "$2b$10$i71ur7gYP0RGIEg0v5TGo.I5CW0G6KzqWl6b1E6eWUjviUjZRBwIi",
+  "status": "Active",
+  "registerDate": {
+    "$date": {
+      "$numberLong": "1662731155985"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "631d852318a16c681dedce45"
+  },
+  "username": "test4",
+  "password": "$2b$10$C0AlC49/XNNMWOQhd5yBS.z5ufoMkYVnhujXz2Kl9E1XQE70oVY/O",
+  "status": "Block",
+  "role": "User",
+  "registerDate": {
+    "$date": {
+      "$numberLong": "1662879011452"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "631dc3d0803427a59f7e9040"
+  },
+  "username": "admin",
+  "password": "$2b$10$cypGb2tBbfC/AD7USHpO5eIBo.IIp2wdS1TnHOIyDLFfNo4s465VG",
+  "status": "Active",
+  "role": "Admin",
+  "registerDate": {
+    "$date": {
+      "$numberLong": "1662895056039"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "632355c2d43ae306f268bfe2"
+  },
+  "username": "jamjam_jj3",
+  "name": "Thanutcha siri",
+  "password": "$2b$10$7wA03t3hLnV3ezwplxCpluxKFh1YQI6oe5.lg4OGT8v42IdLmVqAq",
+  "status": "Active",
+  "role": "Admin",
+  "registerDate": {
+    "$date": {
+      "$numberLong": "1663260098872"
+    }
+  },
+  "__v": 0
+}]

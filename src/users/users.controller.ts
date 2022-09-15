@@ -22,17 +22,15 @@ export class UsersController {
 
     console.log(req.user.username);
     return this.usersService.findAll();
-    
+  
   }
 
   @UseGuards(RolesGuard)
   @Roles(Role.Admin)
   @Get('findNewUser')
-  findNewUser( @Param('name') name : string) {
+  findNewUser() {
     return this.usersService.newUser()
   }
-
-
 
   @UseGuards(RolesGuard)
   @Roles(Role.Admin)
@@ -41,22 +39,12 @@ export class UsersController {
     return this.usersService.findByName(name);
   }
 
-
   @UseGuards(RolesGuard)
   @Roles(Role.Admin)
   @Get('findByUserName/:username')
   findByUserName( @Param('username') username : string ) {
     return this.usersService.findByUserName(username);
   }
-
-
-  // @UseGuards(RolesGuard)
-  // @Roles(Role.Admin)
-  // @Get(':id')
-  // findOne(@Param('id') id: string) {
-  //   return this.usersService.findOne(+id);
-  // }
-
 
   @UseGuards(RolesGuard)
   @Roles(Role.Admin)
@@ -65,15 +53,20 @@ export class UsersController {
     return this.usersService.update(id, updateUserDto);
   }
 
-
   @UseGuards(RolesGuard)
   @Roles(Role.Admin)
   @Patch('blockUser/:id')
   blockUser(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     return this.usersService.blockUser(id, updateUserDto);
   }
- 
 
+  @UseGuards(RolesGuard)
+  @Roles(Role.Admin)
+  @Patch('unblockUser/:id')
+  unblockUser(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
+    return this.usersService.unblockUser(id, updateUserDto);
+  }
+ 
   @UseGuards(RolesGuard)
   @Roles(Role.Admin)
   @Delete(':id')
@@ -81,8 +74,5 @@ export class UsersController {
     return this.usersService.remove(id);
   }
 
-
-
- 
 
 }

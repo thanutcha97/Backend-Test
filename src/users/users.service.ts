@@ -98,6 +98,14 @@ export class UsersService {
   }
 
 
+  async unblockUser(id: string, updateUserDto: UpdateUserDto) {
+    const updateUserData = await this.UserModel.findByIdAndUpdate(
+      {_id: id },
+      { status : "Active"}
+    )
+    return updateUserData;
+  }
+
   async remove(id: string) {
     const deleteUser = await this.UserModel.findByIdAndRemove({ _id: id }).exec();
     return deleteUser;
@@ -144,4 +152,15 @@ export class UsersService {
     return user;
   }
 
-}
+
+  async checkStatus(id : string) {
+    const checkStatus = await this.UserModel.findOne({
+      _id : id,
+      status : "Active"
+    })
+    return checkStatus;
+    }
+  
+  }
+
+

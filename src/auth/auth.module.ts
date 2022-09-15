@@ -7,6 +7,9 @@ import { jwtConstants } from './constants';
 import { UsersModule } from 'src/users/users.module';
 import { JwtStrategy } from './jwt.strategy';
 import { UsersService } from 'src/users/users.service';
+import { ThrottlerModule,ThrottlerGuard } from '@nestjs/throttler';
+import { APP_GUARD } from '@nestjs/core';
+import { RateLimiterModule,RateLimiterGuard } from 'nestjs-rate-limiter';
 
 
 
@@ -20,8 +23,13 @@ import { UsersService } from 'src/users/users.service';
       secret: jwtConstants.secret,
       signOptions: { expiresIn: '60m' },
     }),
+    RateLimiterModule,
   ],
-  providers: [AuthService, JwtStrategy],
+  providers: [AuthService, JwtStrategy,
+    { 
+      provide: APP_GUARD,
+      useClass: RateLimiterGuard,
+    }],
   exports: [AuthService]
 })
 export class AuthModule {}

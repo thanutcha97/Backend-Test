@@ -1,0 +1,757 @@
+{
+	"info": {
+		"_postman_id": "23591d95-ff43-409f-8ea8-6d345ce35fa3",
+		"name": "เทสร้านหนังสือ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "สมัครสมาชิก",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"jamjam_jj3\",\r\n    \"name\" : \"Thanutcha siri\",\r\n    \"password\" : \"141414\"\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "สมัครสมาชิก กรณีมีชื่อผู้ใช้อยู่แล้ว",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"jamjam\",\r\n    \"name\" : \"Thanutcha siri\",\r\n    \"password\" : \"141414\"\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/newUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"newUser"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "54"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"36-YfFVUZy53FIpSYdyCtMsIkG96gs\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 07 Sep 2022 15:26:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 400,\n    \"message\": \"username already exists\"\n}"
+				}
+			]
+		},
+		{
+			"name": "เข้าสู่ระบบ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3Q0IiwiaWQiOiI2MzFkODUyMzE4YTE2YzY4MWRlZGNlNDUiLCJyb2xlIjoiVXNlciIsImlhdCI6MTY2MzI1NzM3OCwiZXhwIjoxNjYzMjYwOTc4fQ.G8CD7fYK8OOUB14tDt6lZdvdgap1HppVQXmCH8ZEy48",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"jamjam_jj3\",\r\n    \"password\" : \"141414\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "เพิ่มหนังสือ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImphbWphbV9qajMiLCJpZCI6IjYzMjM1NWMyZDQzYWUzMDZmMjY4YmZlMiIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTY2MzI2MDY0NywiZXhwIjoxNjYzMjY0MjQ3fQ.uUeqSTdx1p68wEu62lTzL2saQqLLEeqWBvE5QeOl-dw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Annabell\",\r\n    \"price\" : 450,\r\n    \"typename\" : \"Horror\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/book/addbook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"book",
+						"addbook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "แก้ไขข้อมูลหนังสือ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3Q0IiwiaWQiOiI2MzFkODUyMzE4YTE2YzY4MWRlZGNlNDUiLCJyb2xlIjoiVXNlciIsImlhdCI6MTY2MzI1NzM3OCwiZXhwIjoxNjYzMjYwOTc4fQ.G8CD7fYK8OOUB14tDt6lZdvdgap1HppVQXmCH8ZEy48",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Seventeen Be The Sun\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/book/update/63186711d05f914587361bd1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"book",
+						"update",
+						"63186711d05f914587361bd1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "แสดงรายการหนังสือ",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImphbWphbV9qajMiLCJpZCI6IjYzMjM1NWMyZDQzYWUzMDZmMjY4YmZlMiIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTY2MzI2MDY0NywiZXhwIjoxNjYzMjY0MjQ3fQ.uUeqSTdx1p68wEu62lTzL2saQqLLEeqWBvE5QeOl-dw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " "
+				},
+				"url": {
+					"raw": "http://localhost:3000/book",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ค้นหาหนังสือจากชื่อ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/book/search/Seventeen",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"book",
+						"search",
+						"Seventeen"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "เรียงหนังสือจากราคา",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/book/sortbyprice/desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"book",
+						"sortbyprice",
+						"desc"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "เรียงหนังสือจากราคา asc",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/book/sortbyprice/asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"book",
+								"sortbyprice",
+								"asc"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "661"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"295-CMY0wftbxN7vF4SqAQ08XIEelmo\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 07 Sep 2022 14:55:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"63186711d05f914587361bd1\",\n        \"name\": \"Seventeen Be The Sun\",\n        \"price\": 1300,\n        \"typename\": \"K-POP\",\n        \"amount\": 13,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"631866fcd05f914587361bcf\",\n        \"name\": \"BTS\",\n        \"price\": 700,\n        \"typename\": \"K-POP\",\n        \"amount\": 7,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"63184a278468e7e7c3857544\",\n        \"name\": \"Harry Potter\",\n        \"price\": 650,\n        \"typename\": \"Novel\",\n        \"amount\": 4,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"63184bace64e8a255d0fe942\",\n        \"name\": \"Alice in Wonderland\",\n        \"price\": 480,\n        \"typename\": \"Fancy\",\n        \"amount\": 5,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"631862ee68ea388425ea61b2\",\n        \"name\": \"Evil Under The Sun\",\n        \"price\": 480,\n        \"typename\": \"Horror\",\n        \"amount\": 7,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"63184c40e64e8a255d0fe947\",\n        \"name\": \"Sherlock Holmes\",\n        \"price\": 360,\n        \"typename\": \"Novel\",\n        \"amount\": 6,\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "เรียงหนังสือจากจำนวน",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/book/sortbyamount/asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"book",
+						"sortbyamount",
+						"asc"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "เรียงหนังสือจากจำนวน asc",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/book/sortbyamount/asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"book",
+								"sortbyamount",
+								"asc"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "661"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"295-52lProIuDC+hAhU3k4qyBinM3ek\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 07 Sep 2022 15:53:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"63184a278468e7e7c3857544\",\n        \"name\": \"Harry Potter\",\n        \"price\": 650,\n        \"typename\": \"Novel\",\n        \"amount\": 4,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"63184bace64e8a255d0fe942\",\n        \"name\": \"Alice in Wonderland\",\n        \"price\": 480,\n        \"typename\": \"Fancy\",\n        \"amount\": 5,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"63184c40e64e8a255d0fe947\",\n        \"name\": \"Sherlock Holmes\",\n        \"price\": 360,\n        \"typename\": \"Novel\",\n        \"amount\": 6,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"631862ee68ea388425ea61b2\",\n        \"name\": \"Evil Under The Sun\",\n        \"price\": 480,\n        \"typename\": \"Horror\",\n        \"amount\": 7,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"631866fcd05f914587361bcf\",\n        \"name\": \"BTS\",\n        \"price\": 700,\n        \"typename\": \"K-POP\",\n        \"amount\": 7,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"63186711d05f914587361bd1\",\n        \"name\": \"Seventeen Be The Sun\",\n        \"price\": 1300,\n        \"typename\": \"K-POP\",\n        \"amount\": 13,\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "แสดงรายชื่อสมาชิก",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImphbWphbV9qajMiLCJpZCI6IjYzMjM1NWMyZDQzYWUzMDZmMjY4YmZlMiIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTY2MzI2MDY0NywiZXhwIjoxNjYzMjY0MjQ3fQ.uUeqSTdx1p68wEu62lTzL2saQqLLEeqWBvE5QeOl-dw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ค้นหาสมาชิกด้วยชื่อ",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImphbWphbV9qajMiLCJpZCI6IjYzMjM1NWMyZDQzYWUzMDZmMjY4YmZlMiIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTY2MzI2MDY0NywiZXhwIjoxNjYzMjY0MjQ3fQ.uUeqSTdx1p68wEu62lTzL2saQqLLEeqWBvE5QeOl-dw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/findByName/j",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"findByName",
+						"j"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ค้นหาสมาชิกจากusername",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImphbWphbV9qajMiLCJpZCI6IjYzMjM1NWMyZDQzYWUzMDZmMjY4YmZlMiIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTY2MzI2MDY0NywiZXhwIjoxNjYzMjY0MjQ3fQ.uUeqSTdx1p68wEu62lTzL2saQqLLEeqWBvE5QeOl-dw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/findByUserName/j",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"findByUserName",
+						"j"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "แก้ไขข้อมูลสมาชิก",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"jamjam\",\r\n    \"name\" : \"Thanutcha S\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/update/6318994009873e3c938dc97d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"update",
+						"6318994009873e3c938dc97d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "รายงานสมาชิกใหม่",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3Q0IiwiaWQiOiI2MzFkODUyMzE4YTE2YzY4MWRlZGNlNDUiLCJyb2xlIjoiVXNlciIsImlhdCI6MTY2MzI1NzM3OCwiZXhwIjoxNjYzMjYwOTc4fQ.G8CD7fYK8OOUB14tDt6lZdvdgap1HppVQXmCH8ZEy48",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/findNewUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"findNewUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ซื้อหนังสือ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImphbWphbV9qajMiLCJpZCI6IjYzMjM1NWMyZDQzYWUzMDZmMjY4YmZlMiIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTY2MzI2MDY0NywiZXhwIjoxNjYzMjY0MjQ3fQ.uUeqSTdx1p68wEu62lTzL2saQqLLEeqWBvE5QeOl-dw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"amount\": 4,\r\n \"id\": \"63184c40e64e8a255d0fe947\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/purchase/buyBook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"purchase",
+						"buyBook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "แสดงประวัติการซื้อหนังสือของสมาชิก",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImphbWphbV9qajMiLCJpZCI6IjYzMjM1NWMyZDQzYWUzMDZmMjY4YmZlMiIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTY2MzI2MDY0NywiZXhwIjoxNjYzMjY0MjQ3fQ.uUeqSTdx1p68wEu62lTzL2saQqLLEeqWBvE5QeOl-dw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/purchase/reportUser/631d852318a16c681dedce45",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"purchase",
+						"reportUser",
+						"631d852318a16c681dedce45"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "รายงานการขายหนังสือในแต่ละหมวดหมู่",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImphbWphbV9qajMiLCJpZCI6IjYzMjM1NWMyZDQzYWUzMDZmMjY4YmZlMiIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTY2MzI2MDY0NywiZXhwIjoxNjYzMjY0MjQ3fQ.uUeqSTdx1p68wEu62lTzL2saQqLLEeqWBvE5QeOl-dw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/purchase/report/Fancy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"purchase",
+						"report",
+						"Fancy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ระงับการใช้งานสมาชิก",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImphbWphbV9qajMiLCJpZCI6IjYzMjM1NWMyZDQzYWUzMDZmMjY4YmZlMiIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTY2MzI2MDY0NywiZXhwIjoxNjYzMjY0MjQ3fQ.uUeqSTdx1p68wEu62lTzL2saQqLLEeqWBvE5QeOl-dw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/blockUser/631b434c181b4ccca3cb1fe7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"blockUser",
+						"631b434c181b4ccca3cb1fe7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ปลดระงับการใช้งานสมาชิก",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImphbWphbV9qajMiLCJpZCI6IjYzMjM1NWMyZDQzYWUzMDZmMjY4YmZlMiIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTY2MzI2MDY0NywiZXhwIjoxNjYzMjY0MjQ3fQ.uUeqSTdx1p68wEu62lTzL2saQqLLEeqWBvE5QeOl-dw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/unblockUser/631b434c181b4ccca3cb1fe7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"unblockUser",
+						"631b434c181b4ccca3cb1fe7"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,73 @@
+[{
+  "_id": {
+    "$oid": "63184a278468e7e7c3857544"
+  },
+  "name": "Harry Potter",
+  "price": 650,
+  "typename": "Novel",
+  "amount": 3,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63184bace64e8a255d0fe942"
+  },
+  "name": "Alice in Wonderland",
+  "price": 480,
+  "typename": "Fancy",
+  "amount": 3,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63184c40e64e8a255d0fe947"
+  },
+  "name": "Sherlock Holmes",
+  "price": 360,
+  "typename": "Novel",
+  "amount": 2,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "631862ee68ea388425ea61b2"
+  },
+  "name": "Evil Under The Sun",
+  "price": 480,
+  "typename": "Horror",
+  "amount": 7,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "631866fcd05f914587361bcf"
+  },
+  "name": "BTS",
+  "price": 700,
+  "typename": "K-POP",
+  "amount": 7,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63186711d05f914587361bd1"
+  },
+  "name": "Seventeen Be The Sun",
+  "price": 1300,
+  "typename": "K-POP",
+  "amount": 13,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6318c5038b777597226d4ba1"
+  },
+  "name": "Finall Destination",
+  "price": 450,
+  "typename": "Horror",
+  "amount": 10,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "632357f4d43ae306f268bfec"
+  },
+  "name": "Annabell",
+  "price": 450,
+  "typename": "Horror",
+  "amount": 10,
+  "__v": 0
+}]
