@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { CreateBookDto } from './dto/create-book.dto';
 import { UpdateBookDto } from './dto/update-book.dto';
 import { Book } from './entities/book.entity';
@@ -29,7 +29,7 @@ export class BookService {
     if(Booklist.length>0){
       return Booklist
     }else{
-      return `Booklist is Empty`
+      return `Is Empty`
     }
   }
 
@@ -38,6 +38,7 @@ export class BookService {
     const Booklist = await this.BookModel.findById(id);
     return Booklist
   }
+
 
   async findbyname(name: string) {
     const Searchbook = await this.BookModel.find({
@@ -57,10 +58,14 @@ export class BookService {
   return updateBook;
   }
 
-  
+   
   async remove(id: string) {
     const deleteBook = await this.BookModel.findByIdAndRemove({ _id: id }).exec();
-    return deleteBook;  
+    if(deleteBook){
+      return deleteBook;  
+    }else{
+      throw new HttpException('book was not found for parameters' , HttpStatus.BAD_REQUEST);
+    }
   }
 
   async sortbyprice(select : string){

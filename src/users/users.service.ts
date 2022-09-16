@@ -78,10 +78,6 @@ export class UsersService {
 
   }
 
-  // findOne(id: number) {
-  //   return `This action returns a #${id} user`;
-  // }
-
   async update(id: string, updateUserDto: UpdateUserDto) {
 
     const updateUserData = await this.UserModel.findByIdAndUpdate(id, updateUserDto)
@@ -94,7 +90,7 @@ export class UsersService {
       {_id: id },
       { status : "Block"}
     )
-    return updateUserData;
+    return `User Blocked`;
   }
 
 
@@ -103,13 +99,16 @@ export class UsersService {
       {_id: id },
       { status : "Active"}
     )
-    return updateUserData;
+    return `User Unblocked`;
   }
 
   async remove(id: string) {
     const deleteUser = await this.UserModel.findByIdAndRemove({ _id: id }).exec();
-    return deleteUser;
-  }
+    if(deleteUser){
+      return `User data deleted`;  
+    }else{
+      throw new HttpException('book was not found for parameters' , HttpStatus.BAD_REQUEST);
+    }  }
 
 
   async insertUser(userName: string, password: string) {
@@ -147,11 +146,9 @@ export class UsersService {
       }
     })
     console.log(user);
-    
 
     return user;
   }
-
 
   async checkStatus(id : string) {
     const checkStatus = await this.UserModel.findOne({

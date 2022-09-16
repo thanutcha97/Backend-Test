@@ -43,11 +43,11 @@ export class PurchaseService {
     )
 
     if (bookInfo == null) {
-      return 'not found book'
+      return 'The book was not found'
     }
 
     if (bookInfo.amount == 0) {
-      return (`sold out`)
+      return (`Sold Out`)
     }
     let amountSell = 0;
     if(bookSell.length > 0)
@@ -58,7 +58,7 @@ export class PurchaseService {
     const amountCurrent = bookInfo.amount - (amountSell + purcheaseBook.amount);
     // const userInfo = await this.UserModel.find({ _id : user._id})
     if (amountCurrent < 0) {
-      return (`จำนวนหนังสือไม่พอ`)
+      return (`Not enough books`)
     }
 
     await this.PurcheaseModel.create({
@@ -77,7 +77,7 @@ export class PurchaseService {
     bookInfo.amount = amountCurrent;
     bookInfo.save();
 
-    return 'success'
+    return 'Successful Purchase'
 
   }
 
@@ -86,19 +86,29 @@ export class PurchaseService {
     if(History.length>0){
       return History
     }else{
-      return `Booklist is Empty`
+      return `Is Empty`
     }
   }
 
   async reportPurchase( type : String ) {
-    return await this.PurcheaseModel.find({ bookType : type }).select({
+    const reportPurchase = await this.PurcheaseModel.find({ bookType : type }).select({
       bookName: 1, 
       priceBook: 1
     });
+    if(reportPurchase){
+      return reportPurchase
+    }else{
+      return `No reports of book sales in this category`
+    }
 
   }
 
   async reportUser( id : String ) {
-    return await this.PurcheaseModel.find({ UserId : id });
+    const reportUser = await this.PurcheaseModel.find({ UserId : id });
+    if(reportUser){
+      return reportUser
+    }else{
+      return `Users have no reports of book purchases.`
+    }
   }
 }
