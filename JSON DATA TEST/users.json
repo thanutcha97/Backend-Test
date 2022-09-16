@@ -40,24 +40,10 @@
   "__v": 0
 },{
   "_id": {
-    "$oid": "631dc3d0803427a59f7e9040"
-  },
-  "username": "admin",
-  "password": "$2b$10$cypGb2tBbfC/AD7USHpO5eIBo.IIp2wdS1TnHOIyDLFfNo4s465VG",
-  "status": "Active",
-  "role": "Admin",
-  "registerDate": {
-    "$date": {
-      "$numberLong": "1662895056039"
-    }
-  },
-  "__v": 0
-},{
-  "_id": {
     "$oid": "632355c2d43ae306f268bfe2"
   },
-  "username": "jamjam_jj3",
-  "name": "Thanutcha siri",
+  "username": "jamjam",
+  "name": "Thanutcha S",
   "password": "$2b$10$7wA03t3hLnV3ezwplxCpluxKFh1YQI6oe5.lg4OGT8v42IdLmVqAq",
   "status": "Active",
   "role": "Admin",

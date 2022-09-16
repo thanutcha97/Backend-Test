@@ -20,7 +20,6 @@ export class BookService {
 
     const newBook =  await new this.BookModel(book).save();
     return newBook;
-  
   }
 
   //showbooklist
@@ -32,7 +31,6 @@ export class BookService {
       return `Is Empty`
     }
   }
-
 
   async findOne( id : string ) {
     const Booklist = await this.BookModel.findById(id);
@@ -55,7 +53,13 @@ export class BookService {
 
   async update(id: string, updateBookDto: UpdateBookDto) {
   const updateBook = await this.BookModel.findByIdAndUpdate( id , updateBookDto )
-  return updateBook;
+
+  if(updateBook){
+    return `Book data Updated`;  
+  }else{
+    throw new HttpException('Book was not found for parameters' , HttpStatus.BAD_REQUEST);
+  }  
+
   }
 
    

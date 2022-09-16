@@ -81,10 +81,13 @@ export class UsersService {
   async update(id: string, updateUserDto: UpdateUserDto) {
 
     const updateUserData = await this.UserModel.findByIdAndUpdate(id, updateUserDto)
-    return updateUserData;
+    if(updateUserData){
+      return `User data Updated`;  
+    }else{
+      throw new HttpException('User was not found for parameters' , HttpStatus.BAD_REQUEST);
+    }  
 
   }
-
   async blockUser(id: string, updateUserDto: UpdateUserDto) {
     const updateUserData = await this.UserModel.findByIdAndUpdate(
       {_id: id },
@@ -107,18 +110,8 @@ export class UsersService {
     if(deleteUser){
       return `User data deleted`;  
     }else{
-      throw new HttpException('book was not found for parameters' , HttpStatus.BAD_REQUEST);
-    }  }
-
-
-  async insertUser(userName: string, password: string) {
-    const username = userName.toLowerCase();
-    const newUser = new this.UserModel({
-      username,
-      password,
-    });
-    await newUser.save();
-    return newUser;
+      throw new HttpException('Book was not found for parameters' , HttpStatus.BAD_REQUEST);
+    }  
   }
 
 
@@ -145,9 +138,12 @@ export class UsersService {
         $lt: to
       }
     })
-    console.log(user);
 
-    return user;
+    if(user.length > 0){
+      return user;
+    }else{
+      return `Not found new users today`
+    }
   }
 
   async checkStatus(id : string) {

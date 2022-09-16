@@ -83,25 +83,25 @@ export class AuthService {
         }
       }
     } 
-    // else {
-    //   if (userLogIndex == -1) {
-    //      this.passwordIsWrong.push({
-    //       ip: ip,
-    //       count: 1,
-    //       date: null
-    //     })
-    //     throw new HttpException("Invalid username or Password", HttpStatus.BAD_REQUEST);
-    //   }
-    //   this.passwordIsWrong[userLogIndex].count += 1;
+    else {
+      if (userLogIndex == -1) {
+         this.passwordIsWrong.push({
+          ip: ip,
+          count: 1,
+          date: null
+        })
+        throw new HttpException("Invalid username or Password", HttpStatus.BAD_REQUEST);
+      }
+      this.passwordIsWrong[userLogIndex].count += 1;
 
-    //   if (this.passwordIsWrong[userLogIndex].count == 3) {
+      if (this.passwordIsWrong[userLogIndex].count == 3) {
 
-    //     this.passwordIsWrong[userLogIndex].date = dayjs().add(30, 'second').format();
-    //     return {
-    //       message: 'Block Request 30 second'
-    //     }
-    //   }
-    // }
+        this.passwordIsWrong[userLogIndex].date = dayjs().add(30, 'second').format();
+        return {
+          message: 'Block Request 30 second'
+        }
+      }
+    }
 
     throw new HttpException("Invalid username or Password", HttpStatus.BAD_REQUEST);
   }

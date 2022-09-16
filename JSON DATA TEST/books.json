@@ -45,15 +45,6 @@
   "__v": 0
 },{
   "_id": {
-    "$oid": "63186711d05f914587361bd1"
-  },
-  "name": "Seventeen Be The Sun",
-  "price": 1300,
-  "typename": "K-POP",
-  "amount": 13,
-  "__v": 0
-},{
-  "_id": {
     "$oid": "6318c5038b777597226d4ba1"
   },
   "name": "Finall Destination",
@@ -67,6 +58,24 @@
   },
   "name": "Annabell",
   "price": 450,
+  "typename": "Horror",
+  "amount": 10,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6323e687b54e5ddc5fc8daf8"
+  },
+  "name": "Little Nightmares",
+  "price": 470,
+  "typename": "Horror",
+  "amount": 10,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6323e6ddcf93ae90fe11f259"
+  },
+  "name": "Little Nightmares II",
+  "price": 470,
   "typename": "Horror",
   "amount": 10,
   "__v": 0
