@@ -1,31 +1,5 @@
 [{
   "_id": {
-    "$oid": "631b434c181b4ccca3cb1fe7"
-  },
-  "username": "test",
-  "password": "$2b$10$h6g9pi1gEDUMcq8dbpF5eOZ0BUK8LN1Ginm/pgns2EXRNIUc3SKUO",
-  "status": "Active",
-  "registerDate": {
-    "$date": {
-      "$numberLong": "1662731084870"
-    }
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "631b4393181b4ccca3cb1feb"
-  },
-  "username": "test2",
-  "password": "$2b$10$i71ur7gYP0RGIEg0v5TGo.I5CW0G6KzqWl6b1E6eWUjviUjZRBwIi",
-  "status": "Active",
-  "registerDate": {
-    "$date": {
-      "$numberLong": "1662731155985"
-    }
-  },
-  "__v": 0
-},{
-  "_id": {
     "$oid": "631d852318a16c681dedce45"
   },
   "username": "test4",
@@ -50,6 +24,36 @@
   "registerDate": {
     "$date": {
       "$numberLong": "1663260098872"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6323ec5d4ad401945de8f4d6"
+  },
+  "username": "test3",
+  "name": "Test 3",
+  "password": "$2b$10$o.Yk3qlTaizV6qXZBfW9VeDTMy1XL7qM/waisdHRljrtTA3YfDLaK",
+  "status": "Active",
+  "role": "User",
+  "registerDate": {
+    "$date": {
+      "$numberLong": "1663298653703"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6323fbd035ccb9f8ac565a99"
+  },
+  "username": "test_5",
+  "name": "Test 5",
+  "password": "$2b$10$yHar/BIDqCOcpPctb2rjPOdKlLArrPFG0p44fswmNlTK.jkwyESf2",
+  "status": "Active",
+  "role": "User",
+  "registerDate": {
+    "$date": {
+      "$numberLong": "1663302608926"
     }
   },
   "__v": 0
