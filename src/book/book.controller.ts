@@ -30,7 +30,7 @@ export class BookController {
 
   @UseGuards(RolesGuard)
   @Roles(Role.Admin)
-  @Delete('delete/:id')
+  @Delete('remove/:id')
   remove(@Param('id') id: string) {
     return this.bookService.remove(id);
   }

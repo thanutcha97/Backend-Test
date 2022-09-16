@@ -90,8 +90,6 @@ export class PurchaseService {
     }
   }
 
-
-  
   async reportPurchase( type : String ) {
     return await this.PurcheaseModel.find({ bookType : type }).select({
       bookName: 1, 
@@ -99,7 +97,6 @@ export class PurchaseService {
     });
 
   }
-
 
   async reportUser( id : String ) {
     return await this.PurcheaseModel.find({ UserId : id });

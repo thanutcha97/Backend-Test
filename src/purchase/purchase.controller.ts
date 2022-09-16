@@ -18,7 +18,6 @@ export class PurchaseController {
     return this.purchaseService.buyBook( req.user , purcheaseBook);
   }
 
-
   @UseGuards(RolesGuard)
   @Roles(Role.Admin)
   @Get()

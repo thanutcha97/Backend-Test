@@ -39,15 +39,10 @@ export class BookService {
     return Booklist
   }
 
-
-  //findbyname
   async findbyname(name: string) {
-    // return `This action returns a #${id} book`;
     const Searchbook = await this.BookModel.find({
       name : { $regex: name , $options: 'i' } 
     });
-
-    // console.log(Searchbook)
     
     if(Searchbook.length>0){
       return Searchbook
@@ -57,13 +52,12 @@ export class BookService {
     
   }
 
-  //update 
   async update(id: string, updateBookDto: UpdateBookDto) {
   const updateBook = await this.BookModel.findByIdAndUpdate( id , updateBookDto )
   return updateBook;
   }
 
-  //delete
+  
   async remove(id: string) {
     const deleteBook = await this.BookModel.findByIdAndRemove({ _id: id }).exec();
     return deleteBook;  
